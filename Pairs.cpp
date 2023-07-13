@@ -14,11 +14,12 @@ void Pairs::read_in() {
     
     //User write in file name
     //ADD ERROR READING
-    //cout << "Enter your file name for the littles: " << '\n';
-    //cin >> file;
+//    cout << "Enter your file name for the littles: " << '\n';
+//    cin >> file;
     
     //open the file
-    fin.open("Test1Littles");
+    fin.open("Test1Littles.txt");
+  //  fin.open(file);
     string little_prefs;
     vector<string> prefs;
     
@@ -33,4 +34,29 @@ void Pairs::read_in() {
         }
         Littles[my_little] = prefs;
     }
+    
+    fin.close();
+    
+    //User write in file name
+    //ADD ERROR READING
+ //    cout << "Enter your file name for the big: " << '\n';
+   //  cin >> file;
+    
+
+    fin.open("Test1.txt");
+  //  fin.open(file);
+    
+    //read in the data from our big file into the map
+    while (getline(fin, little_prefs)) {
+        string my_bigs = little_prefs;
+        string pref = " ";
+        prefs.resize(5);
+        for (int i = 0; i < 5; i++) {
+            getline(fin, pref);
+            prefs[i] = pref;
+        }
+        Bigs[my_bigs] = prefs;
+    }
+    
+    cout << "hi"; 
 }
