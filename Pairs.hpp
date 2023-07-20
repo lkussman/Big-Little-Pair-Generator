@@ -29,6 +29,9 @@ using namespace std;
 class Pairs {
 public:
     void read_in();
+    void first_pairs();
+    void second_pairs();
+    void third_pairs(); 
 private:
     unordered_map<string, vector<string>> Bigs;
     unordered_map<string, vector<string>> Littles;
