@@ -13,13 +13,11 @@ void Pairs::read_in() {
     string file;
     
     //User write in file name
-    //ADD ERROR READING
-//    cout << "Enter your file name for the littles: " << '\n';
-//    cin >> file;
+    cout << "Enter your file name for the littles: " << '\n';
+    cin >> file;
     
     //open the file
-    fin.open("Test1Littles");
-  //  fin.open(file);
+    fin.open(file);
     string little_prefs;
     vector<string> prefs;
     
@@ -38,13 +36,11 @@ void Pairs::read_in() {
     fin.close();
     
     //User write in file name
-    //ADD ERROR READING
- //    cout << "Enter your file name for the big: " << '\n';
-   //  cin >> file;
+    cout << "Enter your file name for the big: " << '\n';
+    cin >> file;
     
 
-    fin.open("Test1");
-  //  fin.open(file);
+    fin.open(file);
     
     //read in the data from our big file into the map
     while (getline(fin, little_prefs)) {
@@ -75,6 +71,7 @@ void Pairs::read_in() {
     eighth_pairs();
     //pair the leftovers
     random_pairs();
+    //write the pairs out to a new file
     write_out();
 }
 
@@ -471,14 +468,13 @@ void Pairs::random_pairs() {
 
 void Pairs::write_out() {
     ofstream fout;
-    
+    string file;
     //User write in file name
-    //ADD ERROR READING
-//    cout << "Enter your file name for the littles: " << '\n';
-//    cin >> file;
+    cout << "Enter your file name for the littles: " << '\n';
+    cin >> file;
     
     //open the file
-    fout.open("BigLittlePairs!");
+    fout.open(file);
     for (int i = 0; i < duos.size(); i++) {
         for (int j = 0; j < duos[i].size(); j++) {
             fout << duos[i][j] << " ";
